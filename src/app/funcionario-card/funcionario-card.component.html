@@ -1,4 +1,6 @@
-<div class="card">
+<!--Usando uma diretiva e com property binding-->
+<!--{ 'background-color': getCor() }-->
+<div class="card" [ngStyle]="getEstilosCartao()">
     <img src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg">
     <div class="card-block text-center">{{funcionario.nome}}</div>
 </div>

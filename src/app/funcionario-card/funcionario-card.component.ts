@@ -18,6 +18,12 @@ export class FuncionarioCardComponent  {
 //decorador @Input() com "alias" como parametro
 @Input('objetoFuncionario') funcionario: any;
 
-  
-
+    getEstilosCartao(){
+      return {
+        'border-width.px' : this.funcionario.id, 
+      backgroundColor: this.funcionario.id % 2 === 0 
+      ? 'lightblue' : 'lightgreen'
+      
+    };
+  }
 }
