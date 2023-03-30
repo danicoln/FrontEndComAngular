@@ -1,0 +1,50 @@
+<!--a diretiva ngIf modifica a estrutura do DOM. Para isso, necessário colocar sempre
+* antes ex= *ngIf=""-->
+<!--"[hidden]" devolve o mesmo resultado mas funciona um pouco diferente de ngIf-->
+
+<div class="alert alert-success" role="alert" [hidden]="adicionado">
+    Funcionário adicionado: <strong> {{nome}} </strong>
+</div>
+
+<div class="mb-3">
+    <label>Nome</label>
+    <input type="text" class="form-control" [(ngModel)]="nome"
+    (focus)="adicionado = false">
+
+</div>
+    <!--Usando o property binding e o event binding ao mesmo tempo
+    [(ngModel)]-->
+<!-- subistituindo para o conceito two-way data binding 
+    <div class="mb-3">
+        <label>Nome</label>
+        <input type="text" class="form-control" 
+            ngModel="nome">
+            (input)="nome = ($any($event.target).value)"
+            [value]="nome">
+    </div>
+        
+-->
+
+
+<!--Usando sintax suggar-->
+    <!-- DE: 
+        value="{{nome}}>" -->
+ 
+    <!-- Para:
+        [value]="nome">-->
+
+<!--Usando o data binding (on-click)-->
+<!--<button type="button" class="btn btn-primary" on-click="adicionar()">Adicionar</button>-->
+
+<!--Usando o data binding, outra forma de usar é o sintax suggar-->
+<!--<button type="button" class="btn btn-primary" 
+(click)="adicionar()" >Adicionar</button> -->
+
+<!--Usando property binding-->
+<!--<button type="button" class="btn btn-primary" 
+(click)="adicionar()" bind-disabled="nome.length == 0">Adicionar</button>
+-->
+<!--Usando sintax suggar-->
+<button type="button" class="btn btn-primary" 
+(click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+
