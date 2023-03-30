@@ -1,6 +1,5 @@
-<!--Usando uma diretiva e com property binding-->
-<!--{ 'background-color': getCor() }-->
 <div class="card" [ngStyle]="getEstilosCartao()">
     <img src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg">
-    <div class="card-block text-center">{{funcionario.nome}}</div>
+    <div class="card-block text-center">
+        <span class="badge" [ngClass]="{ 'bg-danger': isAdmin(), 'bg-primary': !isAdmin() }">{{funcionario.nome}}</span></div>
 </div>
